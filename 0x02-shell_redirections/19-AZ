@@ -1,0 +1,2 @@
+#!/bin/bash
+input="AcBcDcE"& output=${input//A/Z}& output=${output//c/e}& echo $output
