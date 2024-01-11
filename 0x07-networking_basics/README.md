@@ -1,6 +1,3 @@
-Certainly! Below is the provided information written in Markdown format:
-
-```markdown
 # Networking Fundamentals
 
 ## OSI Model
@@ -79,4 +76,3 @@ The OSI (Open Systems Interconnection) Model is a conceptual framework that stan
 ## Network Connectivity Tool/Protocol
 
 - **Ping:** A commonly used tool/protocol to check if a device is connected to a network.
-```
