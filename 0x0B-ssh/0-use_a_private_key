@@ -1,2 +1,2 @@
-#!bin/bash
+#!/usr/bin/env bash
 ssh -i ~/.ssh/school -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@54.89.27.15
