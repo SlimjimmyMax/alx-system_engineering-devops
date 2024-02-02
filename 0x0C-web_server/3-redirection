@@ -3,7 +3,7 @@
 redirect_path="/redirect_me"
 
 # Configure Nginx redirection
-sudo tee /etc/nginx/sites-available/default > /dev/null <<'EOF'
+sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -18,7 +18,7 @@ server {
     }
 
     location / {
-        try_files $uri $uri/ =404;
+        try_files \$uri \$uri/ =404;
     }
 }
 EOF
