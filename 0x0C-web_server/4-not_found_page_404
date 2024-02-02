@@ -17,7 +17,7 @@ server {
 
     location $not_found_path {
         internal;
-        proxy_pass http://localhost/not_found.html;
+        alias /var/www/html/not_found.html;  # Use 'alias' instead of 'proxy_pass'
     }
 
     location / {
