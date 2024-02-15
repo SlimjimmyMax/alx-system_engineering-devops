@@ -41,7 +41,7 @@ frontend jamesmax.tech-http-frontend
 
 
 frontend  jamesmax.tech-https-frontend
-	bind *:443 ssl crt /etc/ssl/jamesmax.tech.pem
+	bind *:443 ssl crt /etc/letsencrypt/live/www.jamesmax.tech/fullchain.pem
 	http-request set-header X-Forwarded-Proto https
         default_backend jamesmax.tech-backend
 
