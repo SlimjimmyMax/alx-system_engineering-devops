@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# This script configures Nginx to run as the nginx user and listen on all active IPs on port 8080.
+
+# Stop nginx if it's already running
+nginx -s stop
+
+# Remove the existing nginx user and group
+deluser nginx
+delgroup nginx
+
+# Add the nginx user and group with specific UID and GID
+addgroup --system --gid 101 nginx
+adduser --system --no-create-home --home /nonexistent --shell /bin/false --uid 101 --gid 101 --disabled-password --disabled-login nginx
+
+# Update nginx configuration to run as nginx user
+sed -i 's/user\s*nginx;/user nginx nginx;/g' /etc/nginx/nginx.conf
+
+# Restart nginx service
+service nginx restart
+
+# Verify nginx is running as nginx user and listening on port 8080
+ps auxff | grep ngin[x]
+nc -z 0 8080
