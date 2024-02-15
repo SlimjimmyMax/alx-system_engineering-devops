@@ -46,8 +46,9 @@ frontend  jamesmax.tech-https-frontend
         default_backend jamesmax.tech-backend
 
 
-backend jamesmax.tech-backend
-        balance roundrobin
-        server 914-web-01 18.207.141.36:80 check
-        server 914-web-02 54.157.155.211:80 check
+backend jamesmax-tech-backend
+    balance roundrobin
+    server 325605-web-01 18.207.141.36:80 check
+    server 325605-web-02 54.157.155.211:80 check
+
 # end of parameters
