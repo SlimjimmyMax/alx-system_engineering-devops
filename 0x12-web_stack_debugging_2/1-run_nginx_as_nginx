@@ -4,16 +4,11 @@
 # Stop nginx if it's already running
 nginx -s stop
 
-# Remove the existing nginx user and group
-deluser nginx
-delgroup nginx
+# Edit the nginx configuration file to specify the user as nginx
+sed -i 's/^user .*/user nginx;/g' /etc/nginx/nginx.conf
 
-# Add the nginx user and group with specific UID and GID
-addgroup --system --gid 101 nginx
-adduser --system --no-create-home --home /nonexistent --shell /bin/false --uid 101 --gid 101 --disabled-password --disabled-login nginx
-
-# Update nginx configuration to run as nginx user
-sed -i 's/user\s*nginx;/user nginx nginx;/g' /etc/nginx/nginx.conf
+# Update the nginx configuration to listen on port 8080 for all IPs
+sed -i 's/^    listen 80;/    listen 8080 default_server;/g' /etc/nginx/sites-available/default
 
 # Restart nginx service
 service nginx restart
