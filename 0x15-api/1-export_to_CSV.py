@@ -21,7 +21,7 @@ def export_to_csv(employee_id):
         user_response = requests.get(user_url)
         user_data = user_response.json()
         user_id = user_data.get("id")
-        user_name = user_data.get("name")
+        employee_name = user_data.get("name")
 
         # Fetch TODO list information
         todos_response = requests.get(todos_url)
@@ -41,7 +41,7 @@ def export_to_csv(employee_id):
             for task in todos_data:
                 writer.writerow({
                     "USER_ID": user_id,
-                    "USERNAME": user_name,
+                    "USERNAME": name,
                     "TASK_COMPLETED_STATUS": str(task.get("completed")),
                     "TASK_TITLE": task.get("title")
                 })
