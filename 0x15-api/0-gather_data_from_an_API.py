@@ -38,7 +38,8 @@ def main():
     done_count = len(done_tasks)
     employee_name = todo_list[0]['username']
 
-    print(f"Employee {employee_name} is done with tasks ({done_count}/{total_tasks}):")
+    print(
+        f"Employee {employee_name} is done with tasks ({done_count}/{total_tasks}):")
     for task in done_tasks:
         print(f"\t{task['title']}")
 
