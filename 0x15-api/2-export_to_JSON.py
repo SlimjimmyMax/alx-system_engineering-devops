@@ -26,7 +26,7 @@ def export_user_tasks(user_id):
         task_info = {
             'task': task['title'],
             'completed': task['completed'],
-            'username': user_data.get("name")
+            'username': user.data.get("name")
         }
         user_tasks[user_id].append(task_info)
 
