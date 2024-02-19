@@ -3,8 +3,8 @@
 Retrieve TODO list progress from a REST API and export it to CSV.
 """
 
-import requests
 import csv
+import requests
 import sys
 
 
