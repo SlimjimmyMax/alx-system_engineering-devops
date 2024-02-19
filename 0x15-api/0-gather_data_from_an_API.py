@@ -32,8 +32,7 @@ def gettodoprogress(employeeid):
         num_tasks = len(completed_tasks)
 
         """ Display progress"""
-        first_line = "Employee {} is done with tasks({}/{}):".format(
-            employee_name, num_tasks, total_tasks)
+        first_line = "Employee {} is done with tasks({}/{}):".format(employee_name, num_tasks, total_tasks)
         print(first_line)
         for task in completed_tasks:
             print(f"\t{task.get('title')}")
