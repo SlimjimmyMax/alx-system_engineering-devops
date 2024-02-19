@@ -7,11 +7,11 @@ import requests
 import sys
 
 
-def gettodoprogress(employeeid):
+def get_todo_progress(employee_id):
     """
     Retrieve and display TODO list progress for the specified employee ID.
     """
-    baseurl = "https://jsonplaceholder.typicode.com/"
+    base_url = "https://jsonplaceholder.typicode.com/"
     user_url = f"{base_url}/users/{employee_id}"
     todos_url = f"{base_url}/todos?userId={employee_id}"
 
@@ -32,7 +32,7 @@ def gettodoprogress(employeeid):
         num_tasks = len(completed_tasks)
 
         """ Display progress"""
-        first_line = "Employee {} is done with tasks({}/{}):".format(employee_name, num_tasks, total_tasks)
+        first_line = f"Employee {employee_name} is done with tasks({num_tasks}/{total_tasks}):"
         print(first_line)
         for task in completed_tasks:
             print(f"\t{task.get('title')}")
@@ -42,7 +42,7 @@ def gettodoprogress(employeeid):
         sys.exit(1)
 
 
-if __name == "__main":
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python3 script.py <employee_id>")
         sys.exit(1)
