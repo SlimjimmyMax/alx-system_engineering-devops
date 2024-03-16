@@ -1,0 +1,22 @@
+
+
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+
+frontend jamesmax-tech-frontend
+    bind *:80
+    default_backend jamesmax-tech-backend
+
+backend jamesmax-tech-backend
+    balance roundrobin
+    server 325605-web-01 18.207.141.36:80 check
+    server 325605-web-02 54.157.155.211:80 check
+
+frontend  jamesmax.tech-https-frontend
+        bind *:443 ssl crt /etc/letsencrypt/live/www.jamesmax.tech/www.jamesmax.tech.pem
+        http-request set-header X-Forwarded-Proto https
+        default_backend jamesmax-tech-backend

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Install ufw if not already installed
+sudo apt update
+sudo apt install -y ufw
+
+# Enable ufw
+sudo ufw enable
+
+# Allow incoming traffic on ports 22, 80, and 443
+sudo ufw allow 22/tcp     # Allow SSH
+sudo ufw allow 80/tcp     # Allow HTTP
+sudo ufw allow 443/tcp    # Allow HTTPS
+
+# Display ufw status
+sudo ufw status verbose
