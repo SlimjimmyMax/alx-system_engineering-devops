@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 #!/usr/bin/env bash
 #Script that displays all listening sockets 
 netstat -lp
+=======
+#!/usr/bin/env bash
+#Script that displays all listening sockets 
+netstat -lp
+>>>>>>> fde99bb531be4b1a91450eef3f06cfff154f17f6

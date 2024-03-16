@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/env bash
 #Script that pings another address enterd over 5 times
 if [ "$1" ]
@@ -6,3 +7,13 @@ ping -c 5 "$1"
 else
 echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 fi
+=======
+#!/usr/bin/env bash
+#Script that pings another address enterd over 5 times
+if [ "$1" ]
+then
+ping -c 5 "$1"
+else
+echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+fi
+>>>>>>> fde99bb531be4b1a91450eef3f06cfff154f17f6
